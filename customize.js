@@ -13,10 +13,10 @@ const cartBtn = document.getElementById("cartBtn");
 const abayaImage = document.getElementById("abayaImage");
 
 const colorImages = {
-    "Black": "abaya-black.jpg",
-    "Dark Blue": "abaya-navy.jpg",
-    "Light Blue": "abaya-light-blue.jpg",
-    "Beige": "abaya-beige.jpg"
+    "Black": "abaya1.png",
+    "Dark Blue": "abaya1darkblue.png",
+    "Light Blue": "abaya1babyblue.png",
+    "Beige": "abaya1beige.png"
 };
 
 function updateSummary() {
@@ -87,7 +87,6 @@ fabricItems.forEach(item => {
         if (selectedFabric === "Chiffon") fabricPrice = 50;
         if (selectedFabric === "Nida") fabricPrice = 30;
         if (selectedFabric === "Silk") fabricPrice = 150;
-
         updateSummary();
     });
 });
@@ -96,6 +95,40 @@ cartBtn.addEventListener("click", function () {
     alert(
         `Added to cart!\n\nSize: ${selectedSize}\nColor: ${selectedColor}\nFabric: ${selectedFabric}\nTotal: ${basePrice + fabricPrice} SAR`
     );
+});
+
+updateSummary();
+
+cartBtn.addEventListener("click", function () {
+    alert(
+        `Added to cart!\n\nSize: ${selectedSize}\nColor: ${selectedColor}\nFabric: ${selectedFabric}\nTotal: ${basePrice + fabricPrice} SAR`
+    );
+});
+
+cartBtn.addEventListener("click", function () {
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const item = {
+        name: "Customized Abaya",
+        size: selectedSize,
+        color: selectedColor,
+        fabric: selectedFabric,
+        total: basePrice + fabricPrice,
+        quantity: 1,
+        image: colorImages[selectedColor]
+    };
+
+    cart.push(item);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert(
+        `Added to cart!\n\nSize: ${selectedSize}\nColor: ${selectedColor}\nFabric: ${selectedFabric}\nTotal: ${basePrice + fabricPrice} SAR`
+    );
+
+    window.location.href = "cart.html";
+
 });
 
 updateSummary();
