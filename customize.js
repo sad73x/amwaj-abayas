@@ -92,14 +92,6 @@ fabricItems.forEach(item => {
 });
 
 cartBtn.addEventListener("click", function () {
-    alert(
-        `Added to cart!\n\nSize: ${selectedSize}\nColor: ${selectedColor}\nFabric: ${selectedFabric}\nTotal: ${basePrice + fabricPrice} SAR`
-    );
-});
-
-updateSummary();
-
-cartBtn.addEventListener("click", function () {
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
