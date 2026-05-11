@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo-section">
+        <a href="index.html">
+    <img src="logoo.png" alt="Amwaj Logo" class="logo">
+</a>
+        <div>
+           <h2 class="website-name">Amwaj Abayas</h2>
+            <p class="tagline">Where Modesty Meets Elegance</p>
+        </div>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="collection.html">Shop</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li> <a href="profile.html">My Profile</a></li>
+        <li> <a href="cart.html">My Cart</a></li>
+        <li> <a href="customize.html"></a></li>
+    </ul>
+</nav>
+
+<main class="profile-wrapper">
+    <div class="profile-headings">
+      <h1>My Profile</h1>
+        <h1>My Orders</h1>
+    </div>
+
+<section class="profile-cards">
+      <div class="profile-card card">
+        <div class="main-icon">
+          <img src="profile-icon.png" alt="User profile illustration" class="main-img">
+        </div>
+
+        <h2 id="profileName">Sarah Alsharafa</h2>
+        <p class="member-type" id="memberType">Premium Member</p>
+
+        <div class="info-item">
+          <i class="fa-regular fa-envelope"></i>
+          <a href="mailto:sarah.m@email.com" id="profileEmail">sarah.m@email.com</a>
+        </div>
+
+        <div class="info-item">
+          <i class="fa-solid fa-phone"></i>
+          <span id="profilePhone">+966 50 164 9014</span>
+        </div>
+
+        <button class="edit-btn" type="button">
+          <i class="fa-regular fa-pen-to-square"></i>
+          Edit Profile
+        </button>
+      </div>
+
+      <div class="orders-card card">
+        <div class="main-icon">
+          <img src="orders-icon.png" alt="Orders summary illustration" class="main-img">
+        </div>
+
+        <div class="order-item">
+          <i class="fa-solid fa-heart"></i>
+          <span id="favoritesCount">My Favorites: 3</span>
+          <div class="order-controls">
+            <button class="minus-btn" id="removeFavoriteBtn" aria-label="Decrease favorites" type="button">-</button>
+            <button class="small-btn" id="addFavoriteBtn" aria-label="Increase favorites" type="button">+</button>
+          </div>
+        </div>
+
+        <div class="order-item">
+          <i class="fa-solid fa-gem"></i>
+          <span id="loyaltyPoints">335 Loyalty Points</span>
+          <div class="order-controls">
+            <button class="minus-btn" id="removePointsBtn" aria-label="Decrease loyalty points" type="button">-10</button>
+            <button class="small-btn" id="addPointsBtn" aria-label="Increase loyalty points" type="button">+10</button>
+          </div>
+        </div>
+
+        <div class="order-item">
+          <i class="fa-regular fa-circle-check"></i>
+          <span id="deliveredOrders">Delivered Orders: 9</span>
+          <div class="order-controls">
+            <button class="minus-btn" id="removeDeliveredBtn" aria-label="Decrease delivered orders" type="button">-</button>
+            <button class="small-btn" id="addDeliveredBtn" aria-label="Increase delivered orders" type="button">+</button>
+          </div>
+        </div>
+
+        <div class="order-item">
+          <div class="soon-box">
+            <i class="fa-solid fa-right-long"></i>
+            <small>SOON</small>
+          </div>
+          <span id="transitOrders">In Transit: 1</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal hidden" id="editModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="editProfileTitle">
+    <div class="modal-content">
+      <h2 id="editProfileTitle">Edit Profile</h2>
+
+      <div class="form-group">
+        <label for="nameInput">Full name</label>
+        <input
+          type="text"
+          id="nameInput"
+          placeholder="Enter your full name"
+          aria-describedby="nameError"
+          autocomplete="name"
+        >
+        <p class="error-message" id="nameError" aria-live="polite"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="emailInput">Email</label>
+        <input
+          type="email"
+          id="emailInput"
+          placeholder="Enter your email"
+          aria-describedby="emailError"
+          autocomplete="email"
+        >
+        <p class="error-message" id="emailError" aria-live="polite"></p>
+      </div>
+
+      <div class="form-group">
+  <label for="phoneInput">Phone number</label>
+
+  <div class="phone-group" id="phoneGroup">
+    <div class="phone-prefix" id="phonePrefix">+966</div>
+
+    <select id="countryCode" aria-label="Country code">
+      <option value="+966">SA</option>
+      <option value="+971">UAE</option>
+      <option value="+973">BH</option>
+      <option value="+965">KW</option>
+      <option value="+968">OM</option>
+      <option value="+974">QA</option>
+      <option value="+20">EG</option>
+      <option value="+962">JO</option>
+    </select>
+
+    <input
+      type="text"
+      id="phoneInput"
+      placeholder="5XXXXXXXX"
+      inputmode="numeric"
+      aria-describedby="phoneError"
+      autocomplete="tel-national"
+    >
+  </div>
+
+  <p class="error-message" id="phoneError" aria-live="polite"></p>
+</div>
+
+      <div class="form-group">
+        <label for="memberInput">Membership type</label>
+        <select id="memberInput" aria-describedby="memberHelp">
+          <option value="Premium Member">Premium Member</option>
+          <option value="Regular Member">Regular Member</option>
+          <option value="VIP Member">VIP Member</option>
+        </select>
+
+      </div>
+
+      <div class="modal-buttons">
+        <button id="saveBtn" type="button">Save</button>
+        <button id="cancelBtn" class="cancel-btn" type="button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h3>Amwaj Abayas</h3>
+            <p>Enjoy your new abaya journey</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <p>Email: info@amwajabayas.com</p>
+            <p>Instagram: @amwajabayas</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Amwaj Abayas. All rights reserved.</p>
+    </div>
+</footer>
+
+
+  <script src="profile.js"></script>
+
+</body>
+</html>
