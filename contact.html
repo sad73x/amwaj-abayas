@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo-section">
+<a href="index.html">
+    <img src="logoo.png" alt="Amwaj Logo" class="logo">
+</a>
+        <div>
+            <h2 class="website-name">Amwaj Abayas</h2>
+            <p class="tagline">Where Modesty Meets Elegance</p>
+        </div>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="collection.html">Shop</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li> <a href="profile.html">My Profile</a></li>
+        <li> <a href="cart.html">My Cart</a></li>
+        <li><a href="customize.html"></a></li>
+    </ul>
+</nav>
+
+<main id="mainContent">
+<div class="contact-container">
+  <div class="contact-info">
+    <h1>Get in Touch</h1>
+    <p class="subtitle">We'd love to hear from you</p>
+
+    <p class="desc">
+        If you have any questions about our abayas, or need assistance, we're here for you.
+    </p>
+    <p class="communication-methods">
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+        <span>info@amwajabayas.sa</span></p>
+
+     <p class="communication-methods">
+         <i class="fa fa-phone" aria-hidden="true"></i> <span>+966 54 789 1011</span></p>
+
+  </div>
+
+    <form class="contact-form" aria-label="Contact Form" novalidate>
+
+    <div class="row">
+        <div class="input-group">
+            <label for="firstName">First Name <span class="required-star" aria-hidden="true">*</span></label>
+            <input type="text" id="firstName" name="firstName" autocomplete="given-name" placeholder="Enter your first name"  required aria-required="true" aria-describedby="firstNameError">
+            <span class="error-message" id="firstNameError" aria-live="polite"></span>
+        </div>
+
+        <div class="input-group">
+            <label for="lastName">Last Name <span class="required-star" aria-hidden="true">*</span></label>
+            <input type="text" id="lastName" name="lastName" autocomplete="family-name" placeholder="Enter your last name" required aria-required="true" aria-describedby="lastNameError">
+            <span class="error-message" id="lastNameError" aria-live="polite"></span>
+        </div>
+    </div>
+
+        <div class="input-group">
+        <label for="email">Email <span class="required-star" aria-hidden="true">*</span></label>
+        <input type="email" id="email" name="email" autocomplete="email" placeholder="example@email.com" required aria-required="true" aria-describedby="emailError">
+        <span class="error-message" id="emailError" aria-live="polite"></span>
+        </div>
+
+        <div class="input-group">
+        <label for="message">Message <span class="required-star" aria-hidden="true">*</span></label>
+        <textarea name="message" id="message" rows="5" placeholder="Write your message here..." required aria-required="true" aria-describedby="messageError"></textarea>
+        <span class="error-message" id="messageError" aria-live="polite"></span>
+        </div>
+
+        <p id="formSuccess" class="success-message" aria-live="polite"></p>
+        <div class="button-group">
+        <button type="submit">Send Message</button>
+        <button type="button" id="clearStorage">Clear Form</button>
+        </div>
+
+
+    </form>
+
+    </div>
+</main>
+
+<script src="contact.js"></script>
+
+</body>
+</html>
