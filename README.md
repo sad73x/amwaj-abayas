@@ -21,3 +21,4 @@ Women who want to buy abayas online.
 
 ## Milestone 1
 This repository includes the UI/UX prototype and GitHub setup for Milestone 1.
+.
