@@ -112,8 +112,7 @@ cartBtn.addEventListener("click", function () {
     alert(
         `Added to cart!\n\nSize: ${selectedSize}\nColor: ${selectedColor}\nFabric: ${selectedFabric}\nTotal: ${basePrice + fabricPrice} SAR`
     );
-
-    window.location.href = "cart.html";
+location.href = "cart.html";
 
 });
 
